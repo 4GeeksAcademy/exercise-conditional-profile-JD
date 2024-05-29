@@ -39,18 +39,19 @@ function render(variables = {}) {
   variables.socialMediaPosition = variables.socialMediaPosition
     ? variables.socialMediaPosition
     : "left"; // Posición predeterminada
-  variables.twitter = variables.twitter
-    ? variables.twitter
+  let twitterURL = variables.twitter
+    ? `https://twitter.com/${variables.twitter}`
     : "https://twitter.com/4geeksacademy";
-  variables.github = variables.github
-    ? variables.github
+  let githubURL = variables.github
+    ? `https://github.com/${variables.github}`
     : "https://github.com/4geeksacademy";
-  variables.linkedin = variables.linkedin
-    ? variables.linkedin
+  let linkedinURL = variables.linkedin
+    ? `https://linkedin.com/in/${variables.linkedin}`
     : "https://linkedin.com/school/4geeksacademy";
-  variables.instagram = variables.instagram
-    ? variables.instagram
+  let instagramURL = variables.instagram
+    ? `https://instagram.com/${variables.instagram}`
     : "https://instagram.com/4geeksacademy";
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
@@ -59,10 +60,10 @@ function render(variables = {}) {
             <h2>${variables.role}</h2>
             <h3>${variables.city} ${variables.country}</h3>
             <ul class=${variables.socialMediaPosition}>
-              <li><a href="${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="${variables.github}"><i class="fab fa-github"></i></a></li>
-              <li><a href="${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
-              <li><a href="${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="${twitterURL}"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="${githubURL}"><i class="fab fa-github"></i></a></li>
+              <li><a href="${linkedinURL}"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="${instagramURL}"><i class="fab fa-instagram"></i></a></li>
             </ul>
             </div>
             `;
